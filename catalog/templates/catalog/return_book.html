@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 class="return-title">Return Book</h1>
+    {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+    {% endif %}
+    <ul class="book-list">
+        {% for book_instance in book_instances %}
+        <li class="book-item">
+            <a class="book-link" href="{% url 'book-detail' book_instance.book.pk %}">{{ book_instance.book.title }}</a> 
+            <span class="due-back">({{ book_instance.due_back }})</span> - 
+            <span class="borrower">{{ book_instance.borrower.username }}</span>
+            <form method="post" class="return-form">
+                {% csrf_token %}
+                <input type="hidden" name="book_instance_id" value="{{ book_instance.id }}">
+                <button type="submit" class="btn btn-return">Return</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

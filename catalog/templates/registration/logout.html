@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Confirm Logout</h1>
+    <div class="alert alert-warning" role="alert">
+        Are you sure you want to log out?
+    </div>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Logout</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

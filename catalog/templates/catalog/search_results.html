@@ -1,0 +1,24 @@
+<!-- search_results.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Search Results
+    </div>
+    <div class="card-body">
+        {% if books %}
+            <h5>Results for "{{ query }}" by "{{ author_query }}":</h5>
+            <ul class="list-group">
+                {% for book in books %}
+                <li class="list-group-item">
+                    <strong><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></strong> by <a href="{{ book.author.get_absolute_url }}">{{ book.author.first_name }} {{ book.author.last_name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h5>No results found for "{{ query }}" by "{{ author_query }}".</h5>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

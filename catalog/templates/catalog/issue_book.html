@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 class="issue-title">Issue Book</h1>
+    <form method="post" class="issue-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-issue">Issue Book</button>
+    </form>
+{% endblock %}
+
+

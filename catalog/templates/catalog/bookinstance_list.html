@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book Instances</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Book</th>
+        <th>Imprint</th>
+        <th>Borrower</th>
+        <th>Due Back</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bookinstance in bookinstances %}
+      <tr>
+        <td><a href="{% url 'book-detail' bookinstance.book.pk %}">{{ bookinstance.book.title }}</a></td>
+        <td>{{ bookinstance.imprint }}</td>
+        <td>{{ bookinstance.borrower.username }}</td>
+        <td>{{ bookinstance.due_back }}</td>
+        <td>{{ bookinstance.get_status_display }}</td>
+        <td>
+            <a href="{% url 'bookinstance-update' bookinstance.pk %}" class="btn btn-warning btn-sm">Edit</a>
+            <a href="{% url 'renew-book-librarian' bookinstance.pk %}" class="btn btn-warning btn-sm">Renew</a>
+          <a href="{% url 'bookinstance-delete' bookinstance.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

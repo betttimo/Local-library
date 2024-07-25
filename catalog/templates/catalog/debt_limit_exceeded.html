@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debt Limit Exceeded</title>
+</head>
+<body>
+    <h1>Debt Limit Exceeded</h1>
+    <p>Dear {{ member.user.username }}, your outstanding debt is KES {{ member.outstanding_debt }}. You cannot borrow any more books until your debt is below KES 500.00.</p>
+    <a href="{% url 'index' %}">Return to Home</a>
+</body>
+</html>

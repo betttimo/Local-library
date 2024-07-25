@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Search Books
+    </div>
+    <div class="card-body">
+        <form method="GET" action="{% url 'search-results' %}">
+            <div class="form-group">
+                <label for="book_name">Book Name</label>
+                <input type="text" class="form-control" id="book_name" name="book_name" placeholder="Enter book name">
+            </div>
+            <div class="form-group">
+                <label for="author_name">Author Name</label>
+                <input type="text" class="form-control" id="author_name" name="author_name" placeholder="Enter author name">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

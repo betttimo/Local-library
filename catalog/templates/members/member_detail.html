@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Detail</title>
+</head>
+<body>
+    <h1>Member Detail</h1>
+    <p><strong>Username:</strong> {{ member.user.username }}</p>
+    <p><strong>First name:</strong> {{ member.user.first_name }}</p>
+    <p><strong>Last name:</strong> {{ member.user.last_name }}</p>
+    <p><strong>Email:</strong> {{ member.user.email }}</p>
+    <p><strong>Outstanding Debt:</strong> {{ member.outstanding_debt }}</p>
+    <p>
+        <a href="{% url 'member_update' member.pk %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'member_delete' member.pk %}" class="btn btn-danger">Delete</a>
+    </p>
+    <p>
+        <a href="{% url 'member_list' %}" class="btn btn-secondary">Back to list</a>
+    </p>
+</body>
+</html>
+{% endblock %}

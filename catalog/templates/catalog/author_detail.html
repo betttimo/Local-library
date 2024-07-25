@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 class="author-title">Title: {{ author.last_name }}, {{ author.first_name }}</h1>
+
+  <p><strong>Author:</strong> <span class="author-name">{{ author }}</span></p>
+  <p><strong>Dates:</strong> <span class="author-dates">{{ author.date_of_birth }} - {{ author.date_of_death }}</span></p>
+  
+  <div class="books-section">
+    <h4>Books</h4>
+
+    {% for book in books %}
+      <hr />
+      <p class="book-title">
+        {{ book.title }} <span class="book-language">({{ book.language }})</span>
+      </p>
+      
+      <p class="book-summary">{{ book.summary }}</p>
+    {% empty %}
+      <li class="no-books">No books found for this author</li>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block sidebar %}
+  {{ block.super }}
+
+  {% if perms.catalog.change_author or perms.catalog.delete_author %}
+  <hr>
+  <ul class="sidebar-nav">
+    {% if perms.catalog.change_author %}
+      <li><a class="sidebar-link" href="{% url 'author-update' author.id %}">Update author</a></li>
+    {% endif %}
+    {% if not author.book_set.all and perms.catalog.delete_author %}
+      <li><a class="sidebar-link" href="{% url 'author-delete' author.id %}">Delete author</a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+{% endblock %}
+
+

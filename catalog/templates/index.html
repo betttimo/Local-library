@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+{% block title %}
+<title>Local Library - Home</title>
+{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Local Library Home</h1>
+</div>
+<div class="bg-light p-5 rounded">
+    <h2>Welcome to LocalLibrary!</h2>
+    <p class="lead">Developed by <em>MotiiBett Network</em></p>
+    <p>The library has the following record counts:</p>
+    <ul class="list-unstyled">
+        <li><strong>Books:</strong> {{ num_books }}</li>
+        <li><strong>Copies:</strong> {{ num_instances }}</li>
+        <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+        <li><strong>Authors:</strong> {{ num_authors }}</li>
+    </ul>
+    <p>
+        <a class="btn btn-success btn-lg" href="{% url 'books' %}" role="button">Browse Books »</a>
+    </p>
+</div>
+{% endblock %}

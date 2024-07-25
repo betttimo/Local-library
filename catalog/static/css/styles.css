@@ -1,0 +1,227 @@
+/* General Styles */
+body, form, ul, li, table, td, h1, p {
+  font-family: 'Arial', sans-serif;
+  color: #2c3e50;
+}
+
+h1 {
+  font-family: 'Georgia', serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+li {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* Forms */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+input[type="text"], textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button, .btn-primary, .btn-issue, .btn-return, .btn-delete {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+button:hover, .btn-primary:hover, .btn-issue:hover, .btn-return:hover, .btn-delete:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific Styles */
+.author-title, .issue-title, .return-title, .delete-title, .create-book-title, .create-author-title, .author-list-title {
+  color: #2c3e50;
+}
+
+.author-name {
+  font-style: italic;
+  color: #16a085;
+}
+
+.author-dates, .borrower {
+  color: #7f8c8d;
+}
+
+.book-title {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+.book-language {
+  font-style: italic;
+  color: #8e44ad;
+}
+
+.book-summary {
+  color: #2c3e50;
+}
+
+.no-books, .no-authors, .warning-text {
+  color: #e74c3c;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.due-back {
+  color: #dc3545;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  padding-top: 0px;
+  overflow-y: auto; /* Enable vertical scrollbar for sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.6rem;
+  max-height: calc(100vh - 60px); /* Adjust max height as needed */
+}
+
+.content {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  overflow-y: auto; /* Enable vertical scrollbar for content */
+  max-height: calc(100vh - 60px); /* Adjust max height as needed */
+}
+
+.footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.extra-content {
+  margin-top: 20px;
+}
+
+.btn-custom {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+  font-size: 0.9rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.sidebar-nav {
+  margin-top: 10px;
+  padding: 0;
+  overflow-y: auto; /* Ensure sidebar navigation scrolls independently */
+}
+
+.sidebar-link {
+  color: #007bff;
+  font-size: 12px;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-link:hover {
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.delete-form, .confirm-text {
+  text-align: center;
+}
+
+/* Sidebar Specific Styles */
+.sidebar-nav {
+  font-size: 12px;
+  margin: 5px 0;
+  max-height: 75vh;
+  overflow-y: auto; /* Ensure sidebar navigation scrolls */
+}
+
+.sidebar-nav li {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav a {
+  padding: 5px;
+  display: block;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}

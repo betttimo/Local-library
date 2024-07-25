@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>All Borrowed Books</h1>
+
+{% if book_instances %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Borrower</th>
+            <th>Due Back</th>
+            <th>Rent Fee (KES)</th>
+            <th>Outstanding Debt (KES)</th>
+            {% if perms.catalog.can_mark_returned %}
+                <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for bookinst in book_instances %}
+        <tr>
+            <td><a href="{% url 'book-detail' bookinst.book.pk %}">{{ bookinst.book.title }}</a></td>
+            <td>{{ bookinst.borrower.username }}</td>
+            <td class="{% if bookinst.is_overdue %}text-danger{% endif %}">{{ bookinst.due_back }}</td>
+            <td class="{% if bookinst.is_overdue %}text-danger{% endif %}">{{ bookinst.rent_fee }}</td>
+            <td class="{% if bookinst.is_overdue %}text-danger{% endif %}">{{ bookinst.borrower.member.outstanding_debt }}</td>
+            {% if perms.catalog.can_mark_returned %}
+                <td {% if bookinst.is_overdue %}class="text-danger"{% endif %}><a href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>There are no books borrowed.</p>
+{% endif %}
+{% endblock %}

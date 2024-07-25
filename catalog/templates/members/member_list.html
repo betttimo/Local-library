@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+</head>
+<body>
+    <h1>Members</h1>
+    <a href="{% url 'member_create' %}" class="btn btn-success mb-2">Create new member</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Outstanding Debt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.user.username }}</td>
+                <td>{{ member.user.email }}</td>
+                <td>{{ member.outstanding_debt }}</td>
+                <td>
+                    <a href="{% url 'member_detail' member.pk %}" class="btn btn-info btn-sm">Detail</a>
+                    <a href="{% url 'member_update' member.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'member_delete' member.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}
