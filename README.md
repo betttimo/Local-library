@@ -47,5 +47,5 @@ This app allows librarians to manage books, members, and transactions within the
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/your-repository-name.git
+   git clone https://github.com/betttimo/Local-library.git
    cd your-repository-name
