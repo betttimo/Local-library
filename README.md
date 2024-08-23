@@ -44,7 +44,7 @@ This app allows librarians to manage books, members, and transactions within the
 ![Logout](screenshots/logout.png)
 
 ### Tests
-![Tests](screenshots/Screenshot (24).png)
+![Tests](screenshots/Tests.png)
 
 ## Installation
 
