@@ -14,22 +14,38 @@ This app allows librarians to manage books, members, and transactions within the
 - **Security**: Librarian have to login to access the system
 
 ## Screenshots
+### Homepage
+![Home](screenshots/home.png)
 ### Login
-
+![Login](screenshots/login.png)
+### Add Book
+![Book Add](screenshots/add_book.png)
+### Add Author
+![Add Author](screenshots/add_author.png)
+### Add Member
+![Member Add](screenshots/add_member.png)
 ### Book List
 ![Book List](screenshots/book_list.png)
-### Book List
-![Book List](screenshots/book_list.png)
+### Book Instances
+![Book Instances](screenshots/book_instances.png)
+### All Borrowed Books
+![Borrowed Books](screenshots/all_borrowed_books.png)
+### Author List
+![Author List](screenshots/author_list.png)
 ### Member List
 ![Member List](screenshots/member_list.png)
 ### Issue Book
 ![Issue Book](screenshots/issue_book.png)
 ### Return Book
 ![Return Book](screenshots/return_book.png)
+### Search Books
+![Search Books](screenshots/search_books.png)
+### Logout
+![Logout](screenshots/logout.png)
 
 ## Installation
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/your-repository-name.git
+   git clone https://github.com/betttimo/Local-library.git
    cd your-repository-name
