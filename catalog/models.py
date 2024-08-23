@@ -134,8 +134,3 @@ class Member(models.Model):
 
     def can_borrow(self):
         return self.outstanding_debt <= 500.00
-    
-@receiver(post_save, sender=User)
-def create_member(sender, instance, created, **kwargs):
-    if created:
-        Member.objects.get_or_create(user=instance)

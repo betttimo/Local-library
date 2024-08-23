@@ -315,5 +315,5 @@ def delete_bookinstance(request, pk):
     bookinstance = get_object_or_404(BookInstance, pk=pk)
     if request.method == 'POST':
         bookinstance.delete()
-        return redirect('bookinstance_list')
+        return redirect('bookinstance-list')
     return render(request, 'catalog/bookinstance_confirm_delete.html', {'bookinstance': bookinstance})

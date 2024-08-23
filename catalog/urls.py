@@ -13,7 +13,7 @@ urlpatterns += [
     path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
     path('allbooks/', views.AllLoanedBooksListView.as_view(), name='all-borrowed'),
     path('registration/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('/registration/mylogout/', views.my_logout, name='my-logout'),
+    path('registration/mylogout/', views.my_logout, name='my-logout'),
     path('members/', views.member_list, name='member_list'),
     path('members/<int:pk>/', views.member_detail, name='member_detail'),
     path('members/create/', views.member_create, name='member_create'),
